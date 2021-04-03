@@ -1,6 +1,8 @@
 package jogogourmet;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Jogo {
@@ -28,7 +30,19 @@ public class Jogo {
     public void addOpcao(Opcao opcao){
         opcoes.add(opcao);
     }
+    
+    // Altera o tipo para '' para ir para o final da lista
+    public void mudaTipo(Opcao opcao) {
+    	int idx = this.getOpcoes().indexOf(opcao);
+    	this.getOpcoes().get(idx).setTipo("");
+    	reordenaOpcoes();
+    }
 
+    // Reordena para deixar as indefinidas no final da lista
+    public void reordenaOpcoes() {
+    	 Collections.sort(this.getOpcoes());
+    }
+    
     public List<Opcao> getOpcoes(){
         return this.opcoes;
     }

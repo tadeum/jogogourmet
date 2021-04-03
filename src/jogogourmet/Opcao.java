@@ -1,7 +1,7 @@
 
 package jogogourmet;
 
-public class Opcao {
+public class Opcao implements Comparable<Opcao>{
 
     private String nome;
     private String tipo;
@@ -16,4 +16,12 @@ public class Opcao {
      public String getTipo() {
          return this.tipo;
      }
+     public void setTipo(String tipo) {
+    	 this.tipo = tipo;
+     }
+     
+     public int compareTo(Opcao opcao) {
+         return  opcao.tipo.compareTo(tipo);
+     }
+
 }
